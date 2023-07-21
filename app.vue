@@ -6,6 +6,7 @@
 </template>
 
 <script setup>
+import 'gitart-vue-dialog/dist/style.css'
 const version = 2 + 1;
 
 const message = ref("Nuxt");

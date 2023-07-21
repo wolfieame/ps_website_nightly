@@ -2,9 +2,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
-    '@/assets/main.css',
+    '@/assets/main.css'
   ],
   modules: [
     '@nuxtjs/tailwindcss'
-  ]
+  ],
+  plugins: [
+    {src: '~/plugins/gdialog', mode: 'client'}
+  ],
 })
