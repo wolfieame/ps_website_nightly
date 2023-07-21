@@ -1,6 +1,3 @@
-
-@import 'gitart-vue-dialog/dist/style.css';
-
 @font-face {
   font-family: "Aspekta";
   src: local("Aspekta"), url(~/assets/font/aspekta.ttf) format("truetype");

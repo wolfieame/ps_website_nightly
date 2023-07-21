@@ -8,6 +8,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   plugins: [
-    {src: '~/plugins/gdialog', mode: 'client'}
+    // {src: '~/plugins/gdialog', mode: 'client'}
   ],
 })
