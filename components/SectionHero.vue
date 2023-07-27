@@ -16,12 +16,12 @@
         <span class="growth">we empower learners to succeed.</span>
       </div>
       <div
-      @click="dialogState = true"
-        class="btn-readmore flex items-center justify-center cursor-pointer"
+        @click="dialogVisible = true"
+        class="btn-readmore flex items-center justify-center no-select cursor-pointer"
       >
         READ MORE
       </div>
-      <div class="btn-next cursor-pointer">
+      <div class="btn-next cursor-pointer" @click="btnNext()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="66"
@@ -52,13 +52,121 @@
         </svg>
       </div>
     </div>
+
+    <el-dialog
+      v-model="dialogVisible"
+      width="720px"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-btn flex items-center flex-col justify-end">
+        <div class="content-data flex items-center flex-col">
+          <div class="intro">INTRODUCING</div>
+          <div class="company">PRIMESKILLS</div>
+          <div class="innovation">Where innovation meets immersion</div>
+          <div class="data-text">
+            At Primeskills, we're driven by a
+            <span class="data-bold">passion to bridge the skill gap</span> and
+            <span class="data-bold">democratize education</span> through the
+            power of technology. As an innovative <br />
+            <span class="data-bold">Education Technology Start-Up</span>, we
+            simplify and optimize processes while gamifying the educational
+            journey. Through strategic consulting and <br />
+            collaborative efforts, we ensure learning equality by developing immersive
+            solutions that combine play, competition, and rewards. <br />
+            <br />
+            Our goal is to make learning accessible, exciting, and engaging for
+            all individuals and industries. By transforming skill gaps into
+            opportunities <br />
+            for growth and excellence, we empower learners to succeed. At
+            Primeskills, we're not just revolutionizing education—we're
+            transforming lives <br />
+            and industries, creating a future where everyone can access and
+            benefit from their prime skills to thrive.
+          </div>
+        </div>
+        <div class="bg-grad" />
+      </div>
+    </el-dialog>
   </div>
 </template>
 
-<script setup>
-var dialogState = false
+<script lang="ts" setup>
+import { ref } from "vue";
+
+const dialogVisible = ref(false);
+
+const handleClose = (done: () => void) => {
+  done();
+};
 </script>
 <style lang="scss" scoped>
+.dialog-btn {
+  height: 672px;
+  position: relative;
+  width: 720px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url("../assets/img/bg-1.jpg");
+  border-radius: 20px;
+  padding-bottom: 40px;
+  padding-left:10px;
+  padding-right:10px;
+  .content-data {
+    z-index: 2;
+    .intro {
+      color: #fff;
+      text-align: center;
+      font-family: "Aspekta";
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 8.51px;
+    }
+    .company {
+      color: #fff;
+      text-shadow: 0px 4px 8px #00000040;
+      font-family: "Aspekta";
+      font-size: 76px;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .innovation {
+      color: #fff;
+      text-align: center;
+      font-family: "Aspekta";
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 200;
+      margin-bottom:20px;
+    }
+    .data-text {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      .data-bold {
+        color: #fff;
+        font-family: "okta";
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+  .bg-grad {
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(180deg, rgba(7, 25, 73, 0) 0%, #071949 66.12%);
+  }
+}
 .container-section {
   height: 100vh;
   width: 100%;
@@ -110,7 +218,7 @@ var dialogState = false
     }
     .company {
       color: #fff;
-      text-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+      text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
       font-family: "Aspekta";
       font-size: 76px;
       font-style: normal;
@@ -174,8 +282,10 @@ var dialogState = false
       font-size: 13px;
       font-style: normal;
       font-weight: 600;
-      line-height: normal;
       letter-spacing: 1.885px;
+    }
+    .btn-readmore:hover {
+      opacity: 0.9;
     }
     .btn-next {
       position: absolute;

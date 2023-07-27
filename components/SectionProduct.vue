@@ -29,20 +29,20 @@
           />
         </svg>
         <div class="box-ai flex flex-row items-center justify-around">
-          <div class="pro-card">
-            <img src="~/assets/img/p1.png" class="img-pro" />
+          <div class="pro-card" @click="dialogVisible = true">
+            <img src="~/assets/img/p1.svg" class="img-pro" />
             <div class="text-pro">Virtual Reality</div>
           </div>
-          <div class="pro-card">
-            <img src="~/assets/img/p2.png" class="img-pro" />
+          <div class="pro-card" @click="dialogVisible2 = true">
+            <img src="~/assets/img/p2.svg" class="img-pro" />
             <div class="text-pro">Augmented Reality</div>
           </div>
-          <div class="pro-card">
-            <img src="~/assets/img/p3.png" class="img-pro" />
+          <div class="pro-card" @click="dialogVisible3 = true">
+            <img src="~/assets/img/p3.svg" class="img-pro" />
             <div class="text-pro">Multiplayer Learning</div>
           </div>
-          <div class="pro-card">
-            <img src="~/assets/img/p4.png" class="img-pro" />
+          <div class="pro-card" @click="dialogVisible4 = true">
+            <img src="~/assets/img/p4.svg" class="img-pro" />
             <div class="text-pro">
               Gamified Assesment <br />
               and Learning
@@ -81,9 +81,158 @@
         </defs>
       </svg>
     </div>
+    <el-dialog
+      v-model="dialogVisible"
+      width="530px"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-btn flex items-center flex-col">
+        <div class="content-data">
+          <img src="~/assets/img/p1.svg" class="img-dialog" />
+          <div class="title-content">Virtual Reality</div>
+          <div class="desc-content">
+            Experience learning that transcends traditional boundaries with our
+            VR training solutions. Dive into interactive simulations, and
+            realistic scenarios, and acquire practical skills. We, as leading VR
+            consultants, have redefined traditional training, evidenced by our
+            partnerships with industry leaders like CIMB Niaga, who have adopted
+            our innovative approach to enhance their training programs.
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible2"
+      width="530px"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-btn flex items-center flex-col">
+        <div class="content-data">
+          <img src="~/assets/img/p2.svg" class="img-dialog" />
+          <div class="title-content">Augmented Reality</div>
+          <div class="desc-content">
+            Our AR solutions seamlessly blend virtual elements with the real
+            world, taking learning and interaction to new heights. As pioneers
+            in AR consulting, we enable complex concepts visualization and
+            interactive experiences that enhance understanding.
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible3"
+      width="530px"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-btn flex items-center flex-col">
+        <div class="content-data">
+          <img src="~/assets/img/p3.svg" class="img-dialog" />
+          <div class="title-content">Multiplayer Learning</div>
+          <div class="desc-content">
+            Embrace the power of collaboration and connectivity with Multiplayer
+            Learning. Join forces with fellow learners in shared virtual spaces,
+            where teamwork and cooperation flourish. Engage in interactive
+            activities, solve challenges together, and harness the collective
+            intelligence of a diverse community.
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible4"
+      width="530px"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-btn flex items-center flex-col">
+        <div class="content-data">
+          <img src="~/assets/img/p4.svg" class="img-dialog" />
+          <div class="title-content">Gamified Assessment & Learning</div>
+          <div class="desc-content">
+            Unlock a new era of objective evaluation with our Gamified
+            Assessment capabilities. Through immersive virtual environments, we
+            provide precise and comprehensive assessments of skills,
+            competencies, and performance. Our Gamified Assessment
+            revolutionizes traditional evaluation methods, offering insightful
+            feedback and empowering individuals and organizations to make
+            informed decisions.
+          </div>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+
+const dialogVisible = ref(false);
+const dialogVisible2 = ref(false);
+const dialogVisible3 = ref(false);
+const dialogVisible4 = ref(false);
+
+const handleClose = (done: () => void) => {
+  done();
+};
+</script>
+
 <style lang="scss" scoped>
+.dialog-btn {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background: rgb(27, 54, 97);
+  background: linear-gradient(
+    356deg,
+    rgba(27, 54, 97, 1) 0%,
+    rgba(21, 44, 81, 1) 0%,
+    rgba(16, 35, 65, 1) 100%
+  );
+  border-radius: 20px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  .content-data {
+    z-index: 2;
+    padding: 20px;
+    .img-dialog {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+    .title-content {
+      color: #4da3f1;
+      text-align: start;
+      font-family: "okta";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    .desc-content {
+      color: #fff;
+      font-family: "okta";
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+  .bg-grad {
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(180deg, rgba(7, 25, 73, 0) 0%, #071949 66.12%);
+  }
+}
 .section-product {
   height: 100vh;
   width: 100%;
@@ -102,6 +251,8 @@
   .container {
     z-index: 2;
 
+    padding-left:10%;
+    padding-right: 10%;
     .out {
       color: #fff;
       font-family: "okta";
@@ -169,18 +320,25 @@
         border-radius: 33px;
         border: 7px solid rgba(43, 109, 186, 0.48);
         .pro-card {
+          cursor: pointer;
           .img-pro {
             margin-bottom: 23px;
             width: 126px;
             height: 126px;
           }
           .text-pro {
-            color: #FFF;
+            color: #fff;
             text-align: center;
-            font-family: 'okta';
+            font-family: "okta";
             font-size: 13px;
             font-style: normal;
             font-weight: 500;
+          }
+        }
+        .pro-card:hover {
+          filter: brightness(170%);
+          .text-pro {
+            font-weight: bold;
           }
         }
       }

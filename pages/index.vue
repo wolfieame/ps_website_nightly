@@ -9,21 +9,30 @@
         Get In Touch
       </div>
     </div>
-    <SectionHero class="card-section" />
-    <SectionWhyUs class="card-section" />
-    <SectionProduct class="card-section" />
-    <SectionPortfolio class="card-section" />
-    <SectionAbout class="card-section" />
-    <SectionFooter class="card-section" />
+    <SectionHero ref="hero" class="card-section" @clicked="testing" />
+    <SectionWhyUs ref="why" class="card-section" />
+    <SectionProduct ref="product" class="card-section" />
+    <SectionPortfolio ref="portfolio" class="card-section" />
+    <SectionAbout ref="about" class="card-section" />
+    <SectionFooter ref="footer" class="card-section" />
   </div>
 </template>
 
 <script setup>
+
+// const max = ref(0)
+// const value = ref(0)
+// const innerRef = ref<HTMLDivElement>
+// const scrollbarRef = ref<InstanceType<typeof ElScrollbar>> 
 function toWa() {
   window.open('https://api.whatsapp.com/send/?phone=62817719100&text&type=phone_number&app_absent=0', '_blank');
 }
 function toSection() {
   console.log('jump')
+}
+function testing(val) {
+  // innerRef.hero.scrollIntoView({ behavior: 'smooth' });
+  // scrollbarRef.value.setScrollTop(value)
 }
 </script>
 

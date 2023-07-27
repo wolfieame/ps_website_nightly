@@ -18,3 +18,15 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
+.el-popup-parent--hidden {
+  width: 100% !important;
+}
+.el-dialog {
+  border-radius: 20px !important;
+}
+.el-dialog__header {
+  padding:0px !important;
+}
+.el-dialog__body {
+  padding:0px !important;
+}
