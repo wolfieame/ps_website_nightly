@@ -350,4 +350,34 @@ const handleClose = (done: () => void) => {
     z-index: 2;
   }
 }
+// tablet
+@media screen and (min-width: 921px) and (max-width: 1026px) {
+  .section-product {
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+// mobile
+@media only screen and (max-width: 920px) {
+  .section-product {
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      .out {
+        font-size:16px;
+      }
+      .provide {
+        font-size: 25px;
+        line-height: normal;
+        .end {
+          font-size: 25px;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+
 </style>

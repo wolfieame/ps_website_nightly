@@ -1,5 +1,5 @@
 <template>
-  <div class="primeskills">
+  <div ref="" class="primeskills">
     <div class="btn-action flex items-center flex-row">
       <div class="btn-wa noselect flex items-center justify-center" @click="toWa()">
         <img src="~/assets/img/whatsapp.svg" class="icon-img" >
@@ -9,8 +9,8 @@
         Get In Touch
       </div>
     </div>
-    <SectionHero ref="hero" class="card-section" @clicked="testing" />
-    <SectionWhyUs ref="why" class="card-section" />
+    <SectionHero ref="hero" class="card-section" v-smooth-scroll @clicked="toSection" />
+    <SectionWhyUs ref="why" id="sec-3" class="card-section" />
     <SectionProduct ref="product" class="card-section" />
     <SectionPortfolio ref="portfolio" class="card-section" />
     <SectionAbout ref="about" class="card-section" />
@@ -19,21 +19,31 @@
 </template>
 
 <script setup>
+// import { useScroll } from '@vueuse/core'
 
-// const max = ref(0)
-// const value = ref(0)
-// const innerRef = ref<HTMLDivElement>
-// const scrollbarRef = ref<InstanceType<typeof ElScrollbar>> 
-function toWa() {
-  window.open('https://api.whatsapp.com/send/?phone=62817719100&text&type=phone_number&app_absent=0', '_blank');
-}
-function toSection() {
-  console.log('jump')
-}
-function testing(val) {
-  // innerRef.hero.scrollIntoView({ behavior: 'smooth' });
-  // scrollbarRef.value.setScrollTop(value)
-}
+// const el = ref<HTMLElement | null>(null)
+// const { x, y, isScrolling, arrivedState, directions } = useScroll(el)
+// import { inject, ref } from 'vue'
+
+// setup () {
+  // const myEl = ref(null)
+  // const smoothScroll = inject('smoothScroll')
+  const toSection = () => {
+    console.log('ok')
+    this.smoothScroll({
+      scrollTo: myEl.value,
+      hash: '#sampleHash'
+    })
+  }
+// }
+
+
+// function toWa() {
+//   window.open('https://api.whatsapp.com/send/?phone=62817719100&text&type=phone_number&app_absent=0', '_blank');
+// }
+// function toSection() {
+//   console.log('tes', app)
+// }
 </script>
 
 <style lang="scss" scoped>

@@ -94,12 +94,16 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+const emit = defineEmits(["clicked"]);
 
 const dialogVisible = ref(false);
 
 const handleClose = (done: () => void) => {
   done();
 };
+function btnNext () {
+  emit("clicked", 'hero')
+}
 </script>
 <style lang="scss" scoped>
 .dialog-btn {
