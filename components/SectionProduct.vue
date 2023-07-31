@@ -554,9 +554,9 @@ const handleClose = (done: () => void) => {
       .data-mobile {
         display: none;
       }
-      .powered {
-        display: none;
-      }
+    }
+    .powered {
+      display: none;
     }
   }
   .btn-next {
