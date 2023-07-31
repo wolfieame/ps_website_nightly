@@ -4,13 +4,13 @@
     <div class="container">
       <div class="out">Our Products & Services</div>
       <div class="provide">
-        Primeskills provides comprehensive<br />
-        <span class="end">end-to-end consulting</span> services<br />
+        Primeskills provides comprehensive
+        <span class="end">end-to-end consulting</span> services
         in immersive technologies.
       </div>
-      <div class="btn-readmore flex items-center justify-center cursor-pointer">
+      <!-- <div class="btn-readmore flex items-center justify-center cursor-pointer">
         READ MORE
-      </div>
+      </div> -->
       <div class="ai-card flex flex-row">
         <img src="~/assets/img/ai.svg" class="logo-ai" />
         <svg
@@ -28,7 +28,7 @@
             stroke-width="8"
           />
         </svg>
-        <div class="box-ai flex flex-row items-center justify-around">
+        <div class="box-ai flex flex-row flex-nowrap items-center justify-around data-dekstop" style="overflow-x:auto;overflow-y:hidden">
           <div class="pro-card" @click="dialogVisible = true">
             <img src="~/assets/img/p1.svg" class="img-pro" />
             <div class="text-pro">Virtual Reality</div>
@@ -49,6 +49,33 @@
             </div>
           </div>
         </div>
+        <div class="box-ai flex flex-row flex-nowrap items-center justify-around data-mobile" style="overflow-x:auto;overflow-y:hidden">
+          <div class="pro-card" @click="dialogVisible5 = true">
+            <img src="~/assets/img/p1.svg" class="img-pro" />
+            <div class="text-pro">Virtual Reality</div>
+          </div>
+          <div class="pro-card" @click="dialogVisible6 = true">
+            <img src="~/assets/img/p2.svg" class="img-pro" />
+            <div class="text-pro">Augmented Reality</div>
+          </div>
+          <div class="pro-card" @click="dialogVisible7 = true">
+            <img src="~/assets/img/p3.svg" class="img-pro" />
+            <div class="text-pro">Multiplayer Learning</div>
+          </div>
+          <div class="pro-card" @click="dialogVisible8 = true">
+            <img src="~/assets/img/p4.svg" class="img-pro" />
+            <div class="text-pro">
+              Gamified Assesment <br />
+              and Learning
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="powered flex items-center justify-center ">
+        <div class="text-pow">
+          Powered<br>By
+        </div>
+        <img src="~/assets/img/ai.svg" class="img-pow" />
       </div>
     </div>
     <div class="btn-next cursor-pointer">
@@ -167,6 +194,96 @@
         </div>
       </div>
     </el-dialog>
+
+    <el-dialog
+      v-model="dialogVisible5"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">Virtual Reality</div>
+            <div class="at">
+              Experience learning that transcends traditional boundaries with our VR training solutions. Dive into interactive simulations, and realistic scenarios, and acquire practical skills. We, as leading VR consultants, have redefined traditional training, evidenced by our partnerships with industry leaders like CIMB Niaga, who have adopted our innovative approach to enhance their training programs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible6"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">Augmented Reality</div>
+            <div class="at">
+              Our AR solutions seamlessly blend virtual elements with the real world, taking learning and interaction to new heights. As pioneers in AR consulting, we enable complex concepts visualization and interactive experiences that enhance understanding.            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible7"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">Multiplayer Learning</div>
+            <div class="at">
+              Embrace the power of collaboration and connectivity with Multiplayer Learning. Join forces with fellow learners in shared virtual spaces, where teamwork and cooperation flourish. Engage in interactive activities, solve challenges together, and harness the collective intelligence of a diverse community.            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible8"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">Gamified Assessment & Learning</div>
+            <div class="at">
+              Unlock a new era of objective evaluation with our Gamified Assessment capabilities. Through immersive virtual environments, we provide precise and comprehensive assessments of skills, competencies, and performance. Our Gamified Assessment revolutionizes traditional evaluation methods, offering insightful feedback and empowering individuals and organizations to make informed decisions.            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -178,12 +295,99 @@ const dialogVisible2 = ref(false);
 const dialogVisible3 = ref(false);
 const dialogVisible4 = ref(false);
 
+const dialogVisible5 = ref(false);
+const dialogVisible6 = ref(false);
+const dialogVisible7 = ref(false);
+const dialogVisible8 = ref(false);
+
 const handleClose = (done: () => void) => {
   done();
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped>.dialog-mobile {
+  width: 100%;
+  height: 100%;
+  background: #1799e2;
+  border-radius: 15px;
+  .header-dialog {
+    border-radius: 9px 9px 0px 0px;
+    height: 20px;
+    width: 100%;
+    background: #0a528c;
+    .triangle,
+    .triangle:before,
+    .triangle:after {
+      width: 1em;
+      height: 1em;
+    }
+    .triangle {
+      transform: rotate(90deg);
+      overflow: hidden;
+      position: relative;
+      margin: 0px auto 0;
+      border-radius: 20%;
+      transform: translateY(50%) rotate(30deg) skewY(30deg) scaleX(0.866);
+      cursor: pointer;
+      pointer-events: none;
+    }
+    .triangle:before,
+    .triangle:after {
+      position: absolute;
+      background: white;
+      pointer-events: auto;
+      content: "";
+    }
+    .triangle:before {
+      border-radius: 20% 20% 20% 53%;
+      transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+        skewX(30deg) scaleY(0.866) translateX(-24%);
+    }
+    .triangle:after {
+      border-radius: 20% 20% 53% 20%;
+      transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+        skewX(-30deg) scaleY(0.866) translateX(24%);
+    }
+  }
+  .content-dialog {
+    min-height: 200px;
+    border-radius: 0px 0px 10px 10px;
+    background: #1799e2;
+    padding: 20px;
+    .intro {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .where {
+      color: #fff;
+      font-family: "okta";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .at {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      .data-bold {
+        color: #fff;
+        font-family: "okta";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+}
 .dialog-btn {
   height: 100%;
   position: relative;
@@ -263,6 +467,7 @@ const handleClose = (done: () => void) => {
       letter-spacing: 0.16px;
     }
     .provide {
+      width:746px;
       margin-top: 25px;
       margin-bottom: 25px;
       color: #fff;
@@ -300,6 +505,7 @@ const handleClose = (done: () => void) => {
       opacity: 0.8;
     }
     .ai-card {
+      margin-top:90px;
       position: relative;
       .logo-ai {
         position: absolute;
@@ -342,6 +548,15 @@ const handleClose = (done: () => void) => {
           }
         }
       }
+      .data-dekstop {
+        display: flex;
+      }
+      .data-mobile {
+        display: none;
+      }
+      .powered {
+        display: none;
+      }
     }
   }
   .btn-next {
@@ -350,30 +565,103 @@ const handleClose = (done: () => void) => {
     z-index: 2;
   }
 }
-// tablet
-@media screen and (min-width: 921px) and (max-width: 1026px) {
+// mobile
+@media only screen and (max-width: 1030px) {
   .section-product {
+    min-height: 900px;
     .container {
       padding-left: 0px;
       padding-right: 0px;
-    }
-  }
-}
-// mobile
-@media only screen and (max-width: 920px) {
-  .section-product {
-    .container {
-      padding-left: 15px;
-      padding-right: 15px;
       .out {
+        padding-left: 20px;
+        padding-right: 20px;
         font-size:16px;
       }
       .provide {
+        
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        color: #FFF;
+        font-family: 'okta';
         font-size: 25px;
+        font-style: normal;
+        font-weight: 500;
         line-height: normal;
+        letter-spacing: 0.16px;
         .end {
           font-size: 25px;
           line-height: normal;
+          color: #6EBFED;
+          font-family: 'okta';
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 500;
+          letter-spacing: 0.16px;
+        }
+      }
+      .ai-card {
+        margin-top:30px;
+        padding-left: 0px;
+        padding-right: 0px;
+        .logo-ai {
+          display: none;
+        }
+        .line-ai {
+          display: none;
+        }
+        .box-ai {
+          border: 0px;
+          margin-left:0px;
+          width:100%;
+          justify-content: start;
+          overflow-x:scroll;
+          overflow-y:hidden;
+          -ms-overflow-style: none;  /* Internet Explorer 10+ */
+          scrollbar-width: none; 
+          .pro-card {
+            min-width: 185px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            justify-items: center;
+            .img-pro {
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+        }
+        .box-ai::-webkit-scrollbar { 
+          display: none;  /* Safari and Chrome */
+        }
+        
+      .data-dekstop {
+        display: none ;
+      }
+      .data-mobile {
+        display: flex;
+      }
+      }
+      .powered {
+        margin-top:50px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        .text-pow {
+          color: #FFF;
+          text-align: right;
+          font-family: 'okta' Neue;
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 14px;
+          letter-spacing: 0.16px;
+        }
+        .img-pow {
+          margin-left:13px;
+          width: 78px;
+          height: 40px;
         }
       }
     }

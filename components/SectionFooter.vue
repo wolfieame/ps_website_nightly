@@ -1,7 +1,7 @@
 <template>
   <div class="card-footer flex items-center justify-center">
     <div class="container flex justify-between flex-row">
-      <div class="flex flex-row items-center justify-start">
+      <div class="container-2 flex flex-row items-center justify-start">
         <img src="~/assets/img/logo.svg" class="logo-img" />
         <div class="strokes" />
         <div class="address">
@@ -22,10 +22,10 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-row items-center gap-4 justify-start" style="position:absolute;bottom:0px;right:0px;">
-        <img src="~/assets/img/linkedin.svg" @click="linkedin()" class="cursor-pointer" />
-        <img src="~/assets/img/youtube.svg" class="cursor-pointer" @click="youtube()" />
-        <img src="~/assets/img/instagram.svg" class="cursor-pointer" @click="ig()" />
+      <div class="flex flex-row items-center gap-4 justify-start sos-med" style="">
+        <img src="~/assets/img/linkedin.svg" @click="linkedin()" class="icon-img cursor-pointer" />
+        <img src="~/assets/img/youtube.svg" class="cursor-pointer icon-img" @click="youtube()" />
+        <img src="~/assets/img/instagram.svg" class="cursor-pointer icon-img" @click="ig()" />
       </div>
     </div>
   </div>
@@ -50,6 +50,11 @@ function linkedin() {
   background: #000;
   .container {
     position: relative;
+    .sos-med {
+      position:absolute;
+      bottom:0px;
+      right:0px;
+    }
     .logo-img {
       height: 44px;
       object-fit: cover;
@@ -67,6 +72,52 @@ function linkedin() {
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card-footer {
+    height:100%;
+    padding-top:24px;
+    padding-bottom:24px;
+    .container {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      .sos-med {
+        position:static;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:20px;
+        .icon-img {
+          height:20px;
+          width:20px;
+        }
+      }
+      .container-2 {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .logo-img {
+        width: 126px;
+        height: 28px;
+        margin-right: 0px;
+        margin-bottom:17px;
+      }
+      .strokes {
+        display: none;
+      }
+      .address {
+        color: #FFF;
+        text-align: center;
+        font-family: 'okta';
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        margin-left: 0px;;
+        line-height: 14px;
+      }
     }
   }
 }

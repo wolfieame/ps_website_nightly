@@ -12,12 +12,18 @@
       <div class="skill">
         By transforming <span class="gaps">skill gaps</span> into opportuninites
         for <span class="growth">growth</span> and
-        <span class="growth">excellence,</span><br />
+        <span class="growth">excellence, </span>
         <span class="growth">we empower learners to succeed.</span>
       </div>
       <div
         @click="dialogVisible = true"
-        class="btn-readmore flex items-center justify-center no-select cursor-pointer"
+        class="btn-readmore btn-dekstop flex items-center justify-center no-select cursor-pointer"
+      >
+        READ MORE
+      </div>
+      <div
+        @click="dialogVisible2 = true"
+        class="btn-readmore btn-mobile flex items-center justify-center no-select cursor-pointer"
       >
         READ MORE
       </div>
@@ -73,8 +79,9 @@
             <span class="data-bold">Education Technology Start-Up</span>, we
             simplify and optimize processes while gamifying the educational
             journey. Through strategic consulting and <br />
-            collaborative efforts, we ensure learning equality by developing immersive
-            solutions that combine play, competition, and rewards. <br />
+            collaborative efforts, we ensure learning equality by developing
+            immersive solutions that combine play, competition, and rewards.
+            <br />
             <br />
             Our goal is to make learning accessible, exciting, and engaging for
             all individuals and industries. By transforming skill gaps into
@@ -89,6 +96,44 @@
         <div class="bg-grad" />
       </div>
     </el-dialog>
+    <el-dialog
+      v-model="dialogVisible2"
+      width="95%"
+      height="100%"
+      top="5vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">Introducing Primeskills Space</div>
+            <div class="where">Where innovation meets immersion</div>
+            <div class="at">
+              At Primeskills, we're driven by a
+              <span class="data-bold">passion to bridge the skill gap</span> and
+              <span class="data-bold">democratize education</span> through the
+              power of technology. As an innovative
+              <span class="data-bold">Education Technology Start-Up</span>, we
+              simplify and optimize processes while gamifying the educational
+              journey. Through strategic consulting and collaborative efforts,
+              we ensure learning equality by developing immersive solutions that
+              combine play, competition, and rewards. Our goal is to make
+              learning accessible, exciting, and engaging for all individuals
+              and industries. By transforming skill gaps into opportunities for
+              growth and excellence, we empower learners to succeed. At
+              Primeskills, we're not just revolutionizing education—we're
+              transforming lives and industries, creating a future where
+              everyone can access and benefit from their prime skills to thrive.
+            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -97,15 +142,99 @@ import { ref } from "vue";
 const emit = defineEmits(["clicked"]);
 
 const dialogVisible = ref(false);
+const dialogVisible2 = ref(false);
 
 const handleClose = (done: () => void) => {
   done();
 };
-function btnNext () {
-  emit("clicked", 'hero')
+function btnNext() {
+  emit("clicked", "hero");
 }
 </script>
 <style lang="scss" scoped>
+.dialog-mobile {
+  width: 100%;
+  height: 100%;
+  background: #1799e2;
+  border-radius: 15px;
+  .header-dialog {
+    border-radius: 9px 9px 0px 0px;
+    height: 20px;
+    width: 100%;
+    background: #0a528c;
+    .triangle,
+    .triangle:before,
+    .triangle:after {
+      width: 1em;
+      height: 1em;
+    }
+    .triangle {
+      transform: rotate(90deg);
+      overflow: hidden;
+      position: relative;
+      margin: 0px auto 0;
+      border-radius: 20%;
+      transform: translateY(50%) rotate(30deg) skewY(30deg) scaleX(0.866);
+      cursor: pointer;
+      pointer-events: none;
+    }
+    .triangle:before,
+    .triangle:after {
+      position: absolute;
+      background: white;
+      pointer-events: auto;
+      content: "";
+    }
+    .triangle:before {
+      border-radius: 20% 20% 20% 53%;
+      transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+        skewX(30deg) scaleY(0.866) translateX(-24%);
+    }
+    .triangle:after {
+      border-radius: 20% 20% 53% 20%;
+      transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+        skewX(-30deg) scaleY(0.866) translateX(24%);
+    }
+  }
+  .content-dialog {
+    min-height: 300px;
+    border-radius: 0px 0px 10px 10px;
+    background: #1799e2;
+    padding: 20px;
+    .intro {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .where {
+      color: #fff;
+      font-family: "okta";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .at {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      .data-bold {
+        color: #fff;
+        font-family: "okta";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+}
 .dialog-btn {
   height: 672px;
   position: relative;
@@ -116,8 +245,8 @@ function btnNext () {
   background-image: url("../assets/img/bg-1.jpg");
   border-radius: 20px;
   padding-bottom: 40px;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left: 10px;
+  padding-right: 10px;
   .content-data {
     z-index: 2;
     .intro {
@@ -144,7 +273,7 @@ function btnNext () {
       font-size: 10px;
       font-style: normal;
       font-weight: 200;
-      margin-bottom:20px;
+      margin-bottom: 20px;
     }
     .data-text {
       color: #fff;
@@ -238,6 +367,7 @@ function btnNext () {
       font-weight: 400;
       line-height: normal;
       letter-spacing: 43.47px;
+      margin-right: -43.47px;
     }
     .innovation {
       margin-top: 20px;
@@ -249,6 +379,7 @@ function btnNext () {
       line-height: normal;
     }
     .skill {
+      width: 551px;
       color: #fff;
       text-align: center;
       font-family: "okta";
@@ -273,6 +404,13 @@ function btnNext () {
         line-height: normal;
       }
     }
+    .btn-dekstop {
+      display: flex;
+    }
+    .btn-mobile {
+      display: none;
+    }
+
     .btn-readmore {
       margin-bottom: 70px;
       margin-top: 20px;
@@ -300,6 +438,66 @@ function btnNext () {
     z-index: 2;
     position: absolute;
     top: 17px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container-section {
+    min-height: 800px;
+    .body-section {
+      .intro {
+        font-size: 10px;
+      }
+      .company {
+        color: #fff;
+        text-align: center;
+        text-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+        font-family: "aspekta";
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .space {
+        color: #fff;
+        text-align: center;
+        font-family: "okta";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 24.57px;
+        margin-right: -24.57px;
+      }
+      .innovation {
+        color: #fff;
+        text-align: center;
+        font-family: "aspekta";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+      }
+      .skill {
+        width: 300px;
+        margin-top: 12px;
+        font-size: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .gaps {
+          font-size: 12px;
+        }
+        .growth {
+          font-size: 12px;
+        }
+      }
+      .btn-dekstop {
+        display: none;
+      }
+      .btn-mobile {
+        display: flex;
+      }
+    }
   }
 }
 </style>

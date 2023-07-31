@@ -10,23 +10,23 @@
       </div>
       <div class="stands">
         Primeskills stands at the <span class="fore">forefront</span> of
-        <span class="fore">progress</span>, <br />bridging the
+        <span class="fore">progress</span>, bridging the
         <span class="fore">gap</span> between
         <span class="fore">theory</span> and <span class="fore">practice</span>
       </div>
-      <div class="flex flex-row">
+      <div class="flex flex-row flex-nowrap container-list data-dekstop">
         <div
           class="flex flex-col sec-grup cursor-pointer"
           @click="dialogVisible = true"
         >
-          <img src="~/assets/img/sec_12.svg" class="" />
+          <img src="~/assets/img/sec_12.svg" class="img-sec" />
           <div class="text-sec">
             The Largest B2B<br />
             VR Training
           </div>
         </div>
         <div class="flex flex-col sec-grup" @click="dialogVisible2 = true">
-          <img src="~/assets/img/sec_2.svg" class="" />
+          <img src="~/assets/img/sec_2.svg" class="img-sec" />
           <div class="text-sec">
             Top 10 EdTech Startup<br />
             at the prestigious<br />
@@ -34,7 +34,35 @@
           </div>
         </div>
         <div class="flex flex-col sec-grup" @click="dialogVisible3 = true">
-          <img src="~/assets/img/sec_3.svg" class="" />
+          <img src="~/assets/img/sec_3.svg" class="img-sec" />
+          <div class="text-sec">
+            The Official Distributor<br />
+            for PICO VR Headset
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-nowrap container-list data-mobile">
+        <div
+          class="flex flex-col sec-grup cursor-pointer"
+          @click="dialogVisible4 = true"
+        >
+          <img src="~/assets/img/sec_12.svg" class="img-sec" />
+          <div class="text-sec">
+            The Largest B2B<br />
+            VR Training
+          </div>
+        </div>
+        <div class="flex flex-col sec-grup" @click="dialogVisible5 = true">
+          <img src="~/assets/img/sec_2.svg" class="img-sec" />
+          <div class="text-sec">
+            Top 10 EdTech Startup<br />
+            at the prestigious<br />
+            AWS EdTech Event
+          </div>
+        </div>
+        <div class="flex flex-col sec-grup" @click="dialogVisible6 = true">
+          <img src="~/assets/img/sec_3.svg" class="img-sec" />
           <div class="text-sec">
             The Official Distributor<br />
             for PICO VR Headset
@@ -135,6 +163,89 @@
         </div>
       </div>
     </el-dialog>
+
+    <el-dialog
+      v-model="dialogVisible4"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">Largest B2B VR Training</div>
+            <div class="at">
+              Primeskills executed the largest B2B VR Training case study in
+              Southeast Asia with CIMB Niaga & Danamon, deploying over 350 VR
+              headsets and 6000+ modules across Indonesia. This milestone
+              demonstrates our ability to handle large-scale projects and our
+              impact in the EdTech field.
+            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible5"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">
+              Top 10 EdTech startups at the prestigious AWS EdTech event
+            </div>
+            <div class="at">
+              We were selected as one of the top 10 EdTech startups at the
+              prestigious AWS EdTech event. This accolade showcases our
+              innovation and standing within the EdTech community, solidifying
+              our reputation as a leading player in the industry.
+            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+    <el-dialog
+      v-model="dialogVisible6"
+      width="95%"
+      height="100%"
+      top="15vh"
+      :before-close="handleClose"
+      append-to-body
+      :show-close="false"
+    >
+      <div class="dialog-mobile flex items-center flex-col justify-start">
+        <div class="header-dialog">
+          <div style="transform: rotate(180deg); margin-top: 5px">
+            <div class="triangle" />
+          </div>
+          <div class="content-dialog flex flex-col items-center">
+            <div class="intro">An official distributor for PICO VR Headset</div>
+            <div class="at">
+              Our partnership as an official distributor for PICO demonstrates
+              our commitment to using cutting-edge technology. It shows our
+              ability to create immersive and interactive educational
+              experiences for learners, and cater to the needs of businesses
+              seeking effective training solutions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 <script lang="ts" setup>
@@ -144,12 +255,99 @@ const dialogVisible = ref(false);
 const dialogVisible2 = ref(false);
 const dialogVisible3 = ref(false);
 
+const dialogVisible4 = ref(false);
+const dialogVisible5 = ref(false);
+const dialogVisible6 = ref(false);
+
 const handleClose = (done: () => void) => {
   done();
 };
 </script>
 
 <style lang="scss" scoped>
+.dialog-mobile {
+  width: 100%;
+  height: 100%;
+  background: #1799e2;
+  border-radius: 15px;
+  .header-dialog {
+    border-radius: 9px 9px 0px 0px;
+    height: 20px;
+    width: 100%;
+    background: #0a528c;
+    .triangle,
+    .triangle:before,
+    .triangle:after {
+      width: 1em;
+      height: 1em;
+    }
+    .triangle {
+      transform: rotate(90deg);
+      overflow: hidden;
+      position: relative;
+      margin: 0px auto 0;
+      border-radius: 20%;
+      transform: translateY(50%) rotate(30deg) skewY(30deg) scaleX(0.866);
+      cursor: pointer;
+      pointer-events: none;
+    }
+    .triangle:before,
+    .triangle:after {
+      position: absolute;
+      background: white;
+      pointer-events: auto;
+      content: "";
+    }
+    .triangle:before {
+      border-radius: 20% 20% 20% 53%;
+      transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+        skewX(30deg) scaleY(0.866) translateX(-24%);
+    }
+    .triangle:after {
+      border-radius: 20% 20% 53% 20%;
+      transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%)
+        skewX(-30deg) scaleY(0.866) translateX(24%);
+    }
+  }
+  .content-dialog {
+    min-height: 200px;
+    border-radius: 0px 0px 10px 10px;
+    background: #1799e2;
+    padding: 20px;
+    .intro {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .where {
+      color: #fff;
+      font-family: "okta";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .at {
+      color: #fff;
+      text-align: center;
+      font-family: "okta";
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      .data-bold {
+        color: #fff;
+        font-family: "okta";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+}
 .dialog-btn {
   height: 405px;
   position: relative;
@@ -210,7 +408,7 @@ const handleClose = (done: () => void) => {
   }
   .container {
     z-index: 2;
-    padding-left:10%;
+    padding-left: 10%;
     padding-right: 10%;
     .why-us {
       color: #fff;
@@ -243,6 +441,7 @@ const handleClose = (done: () => void) => {
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+      width: 400px;
       .fore {
         color: #fff;
         font-family: "okta";
@@ -252,10 +451,19 @@ const handleClose = (done: () => void) => {
         line-height: normal;
       }
     }
+    .data-mobile {
+      display: none;
+    }
+    .data-dekstop {
+      display: flex;
+    }
     .sec-grup {
       margin-top: 40px;
       position: relative;
       cursor: pointer;
+      min-width: 180px;
+      .img-sec {
+      }
       .text-sec {
         position: absolute;
         top: 165px;
@@ -281,6 +489,53 @@ const handleClose = (done: () => void) => {
     position: absolute;
     bottom: -30px;
     z-index: 2;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container-section {
+    min-height: 900px;
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+      .why-us {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .cater {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 35px;
+        line-height: 40px;
+        .banking {
+          font-size: 35px;
+          line-height: 40px;
+        }
+      }
+      .stands {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 280px;
+      }
+      .data-dekstop {
+        display: none;
+      }
+      .data-mobile {
+        display: flex;
+      }
+      .container-list {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+        .sec-grup {
+          min-height: 230px;
+        }
+      }
+      .container-list::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+      }
+    }
   }
 }
 </style>
