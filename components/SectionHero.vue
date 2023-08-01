@@ -17,13 +17,13 @@
       </div>
       <div
         @click="dialogVisible = true"
-        class="btn-readmore btn-dekstop flex items-center justify-center no-select cursor-pointer"
+        class="btn-readmore noselect btn-dekstop flex items-center justify-center no-select cursor-pointer"
       >
         READ MORE
       </div>
       <div
         @click="dialogVisible2 = true"
-        class="btn-readmore btn-mobile flex items-center justify-center no-select cursor-pointer"
+        class="btn-readmore noselect btn-mobile flex items-center justify-center no-select cursor-pointer"
       >
         READ MORE
       </div>
@@ -443,7 +443,7 @@ function btnNext() {
 
 @media only screen and (max-width: 480px) {
   .container-section {
-    min-height: 800px;
+    min-height: 100vh;
     .body-section {
       .intro {
         font-size: 10px;
