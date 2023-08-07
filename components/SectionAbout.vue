@@ -1077,12 +1077,14 @@ async function save() {
           }
         }
         .border-horizontal {
+          display: flex;
           border-bottom:1px solid white;
           margin-top:20px;
           margin-bottom: 0px;
           width:70%;
         }
         .btn-wa2 {
+          display: flex;
           margin-top:20px;
           border-radius: 51px;
           background: #1db410;
