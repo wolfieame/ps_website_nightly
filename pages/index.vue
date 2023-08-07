@@ -1,5 +1,5 @@
 <template>
-  <div ref="" class="primeskills">
+  <div class="primeskills">
     <div class="btn-action flex items-center flex-row">
       <div
         class="btn-wa noselect flex items-center noselect justify-center"
@@ -10,7 +10,7 @@
       </div>
       <div
         class="btn-touch flex items-center noselect justify-center"
-        @click="toSection()"
+        @click="toAbout()"
       >
         Get In Touch
       </div>
@@ -39,48 +39,29 @@
       </div>
       <div
         class="btn-touch flex noselect items-center justify-center"
-        @click="toSection()"
+        @click="toAbout()"
       >
         Get In Touch
       </div>
       <div class="border-nav" />
-      <div class="text-nav noselect">Why Us</div>
-      <div class="text-nav noselect">Our Products & Services</div>
-      <div class="text-nav noselect">Our Portfolios</div>
-      <div class="text-nav noselect">Myth and Facts about Immersive Technology</div>
+      <div class="text-nav noselect" @click="toWhy()">Why Us</div>
+      <div class="text-nav noselect" @click="toProduct()">Our Products & Services</div>
+      <div class="text-nav noselect" @click="toPortfolio()">Our Portfolios</div>
+      <div class="text-nav noselect" @click="toMyth()">
+        Myth and Facts about Immersive Technology
+      </div>
     </div>
-    <SectionHero
-      ref="hero"
-      class="card-section"
-      v-smooth-scroll
-      @clicked="toSection"
-    />
-    <SectionWhyUs ref="why" id="sec-3" class="card-section" />
-    <SectionProduct ref="product" class="card-section" />
-    <SectionPortfolio ref="portfolio" class="card-section" />
-    <SectionAbout ref="about" class="card-section" />
-    <SectionFooter ref="footer" class="card-section" />
+    <SectionHero id="hero" class="card-section" />
+    <SectionWhyUs id="why" class="card-section" />
+    <SectionProduct id="product" class="card-section" />
+    <SectionPortfolio id="portfolio" class="card-section" />
+    <SectionAbout id="about" class="card-section" />
+    <SectionFooter id="footer" class="card-section" />
   </div>
 </template>
 
 <script setup>
-// import { useScroll } from '@vueuse/core'
-
-// const el = ref<HTMLElement | null>(null)
-// const { x, y, isScrolling, arrivedState, directions } = useScroll(el)
-// import { inject, ref } from 'vue'
-
-// setup () {
-// const myEl = ref(null)
-// const smoothScroll = inject('smoothScroll')
-// const toSection = () => {
-//   console.log('ok')
-//   this.smoothScroll({
-//     scrollTo: myEl.value,
-//     hash: '#sampleHash'
-//   })
-// }
-// }
+const router = useRouter();
 
 const nav = ref(false);
 function toWa() {
@@ -89,8 +70,25 @@ function toWa() {
     "_blank"
   );
 }
-function toSection() {
-  console.log("tes", app);
+function toWhy () {
+  router.push({ path: '/', hash: '#why' })
+  this.nav = false
+}
+function toAbout () {
+  router.push({ path: '/', hash: '#about' })
+  this.nav = false
+}
+function toProduct () {
+  router.push({ path: '/', hash: '#product' })
+  this.nav = false
+}
+function toPortfolio () {
+  router.push({ path: '/', hash: '#portfolio' })
+  this.nav = false
+}
+function toMyth () {
+  router.push({ path: '/', hash: '#about' })
+  this.nav = false
 }
 </script>
 

@@ -4,7 +4,7 @@
       <img src="~/assets/img/portfolio/logo_dark.svg" class="cursor-pointer logo-img" @click="toHome()" />
       <div class="title-por">Our Portfolios</div>
       <img src="~/assets/img/portfolio/bg_petra.jpg" class="bg-img" />
-      <div class="flex items-start flex-row mt-4">
+      <div class="flex items-start flex-row mt-4 coloumn-sec">
         <div class="flex flex-col justify-start left-side mr-4 flex-auto">
           <img src="~/assets/img/portfolio/pcu.png" class="logo-img2" />
           <div class="desc">
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="next-portfolio flex flex-row">
-        <div class="card-port" style="margin-right: 38px">
+        <div class="card-port">
           <img src="~/assets/img/portfolio/bg_cimb.jpg" class="bg-card" />
           <div class="text-card">
             The integration of VR Training has injected a new level of
@@ -188,6 +188,53 @@ export default {
         }
         .btn-act:hover {
           opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .portfolio {
+    padding-left: 20px;
+    padding-right: 20px;
+    .content-data {
+      width: 100%;
+      .title-por {
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+      .bg-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .coloumn-sec {
+        flex-direction: column;
+      }
+      .left-side {
+        .logo-img2 {
+          width: 200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .desc {
+          font-size: 18px;
+          margin-bottom: 20px;
+        }
+      }
+      .next-portfolio {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 30px;
+        gap:20px;
+        .card-port {
+          min-width: 300px;
         }
       }
     }

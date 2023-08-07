@@ -71,34 +71,36 @@
       </div>
     </div>
     <div class="btn-next cursor-pointer">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="66"
-        height="66"
-        viewBox="0 0 66 66"
-        fill="none"
-      >
-        <circle cx="33" cy="33" r="33" fill="url(#paint0_linear_37_83)" />
-        <path
-          d="M25 15L32.5 23L40 15"
-          stroke="white"
-          stroke-width="4"
-          stroke-linecap="round"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_37_83"
-            x1="33"
-            y1="0"
-            x2="33"
-            y2="66"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#438ED3" />
-            <stop offset="1" stop-color="#104679" stop-opacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <NuxtLink :to="{ path: '/', hash: '#product' }">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="66"
+          height="66"
+          viewBox="0 0 66 66"
+          fill="none"
+        >
+          <circle cx="33" cy="33" r="33" fill="url(#paint0_linear_37_83)" />
+          <path
+            d="M25 15L32.5 23L40 15"
+            stroke="white"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_37_83"
+              x1="33"
+              y1="0"
+              x2="33"
+              y2="66"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#438ED3" />
+              <stop offset="1" stop-color="#104679" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </NuxtLink>
     </div>
     <el-dialog
       v-model="dialogVisible"
