@@ -1,6 +1,9 @@
 <template>
   <div class="primeskills">
-    <div class="btn-action flex items-center flex-row">
+    <div class="flex items-center justify-center">
+      <img src="~/assets/img/logo.png" @click="toHero()" class="cursor-pointer logo-img"/>
+    </div>
+    <!-- <div class="btn-action flex items-center flex-row">
       <div
         class="btn-wa noselect flex items-center noselect justify-center"
         @click="toWa()"
@@ -14,9 +17,10 @@
       >
         Get In Touch
       </div>
-    </div>
+    </div> -->
     <div
       class="btn-nav flex item-center justify-center noselect"
+      style="position: fixed;"
       @click="nav = true"
     >
       <img src="~/assets/img/nav.svg" class="icon-img" />
@@ -70,6 +74,9 @@ function toWa() {
     "_blank"
   );
 }
+function toHero () {
+  router.push({ path: '/', hash: '' })
+}
 function toWhy () {
   router.push({ path: '/', hash: '#why' })
   this.nav = false
@@ -94,6 +101,13 @@ function toMyth () {
 
 <style lang="scss" scoped>
 .primeskills {
+  .logo-img {
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top: 17px;
+  }
   .card-section {
     z-index: 1;
     position: relative;

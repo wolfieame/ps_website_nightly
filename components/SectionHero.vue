@@ -3,7 +3,7 @@
     <div class="bg-img" />
     <div class="bg-grad-1" />
     <div class="bg-grad-2" />
-    <img src="~/assets/img/logo.svg" @click="toHero()" class="cursor-pointer logo-img" />
+    <!-- <img src="~/assets/img/logo.svg" @click="toHero()" class="cursor-pointer logo-img" style="position: fixed;z-index:99"/> -->
     <div class="body-section flex items-center justify-center flex-col">
       <div class="intro">INTRODUCING</div>
       <div class="company">PRIMESKILLS</div>
