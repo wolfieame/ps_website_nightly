@@ -327,14 +327,43 @@ Isolating Experience?
       </div>
       
       <div class="card-submit flex items-center justify-center flex-col">
-        <div class="title-card">Want to learn more? drop us your E-Mail</div>
-        <div class="flex items-center form-input justify-center flex-row">
-          <input v-model="email" class="input-data" />
-          <div
-            class="btn-submit flex items-center justify-center cursor-pointer"
-            @click="save()"
-          >
-            <span v-if="isLoading">Loading...</span> <span v-else>Submit</span>
+        <div class="title-card">Want to learn more?</div>
+        <div class="flex items-center justify-center flex-row">
+          <div class="flex flex-row items-center">
+            <div
+              class="btn-wa noselect flex noselect items-center justify-center"
+              @click="toWa()"
+            >
+              <img src="~/assets/img/whatsapp.svg" class="icon-img" />
+              Chat with us
+            </div>
+            <div class="border-vertical" />
+          </div>
+
+          <div class="flex items-start justify-center flex-col">
+            <div class="title-input">
+              or, drop us your email
+            </div>
+            <div class="flex items-center form-input justify-center flex-row">
+              <input v-model="email" class="input-data" />
+              <div
+                class="btn-submit flex items-center justify-center cursor-pointer"
+                @click="save()"
+              >
+                <span v-if="isLoading">Loading...</span> <span v-else>Submit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-horizontal" />
+        <div
+          class="btn-wa2 noselect flex noselect items-center justify-center"
+          @click="toWa()"
+        >
+          <img src="~/assets/img/whatsapp.svg" class="icon-img" />
+          <div class="title-btn">
+
+            Chat with us
           </div>
         </div>
       </div>
@@ -602,6 +631,13 @@ const email = ref("");
 const handleClose = (done: () => void) => {
   done();
 };
+
+function toWa() {
+  window.open(
+    "https://api.whatsapp.com/send/?phone=62817719100&text&type=phone_number&app_absent=0",
+    "_blank"
+  );
+}
 async function save() {
   if (email.value === "") {
     ElMessage({
@@ -852,7 +888,7 @@ async function save() {
     
     .card-submit {
       margin-top: 120px;
-      width: 768px;
+      width: 767px;
       height: 234px;
       margin-left: auto;
       margin-right:auto;
@@ -861,6 +897,46 @@ async function save() {
       background: rgba(7, 25, 73, 0.71);
       box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.56);
       backdrop-filter: blur(16px);
+      .title-input {
+        margin-bottom:10px;
+        color: #FFF;
+        font-family: 'okta';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .border-vertical {
+        border-right: 2px solid white;
+        height: 99px;
+        margin-right:24px;
+      }
+      .border-horizontal {
+        display:none;
+      }
+      .btn-wa2 {
+        display: none;
+      }
+      .btn-wa {
+        margin-right:27px;
+        border-radius: 51px;
+        background: #1db410;
+        width: 144px;
+        height: 34px;
+        padding-left: 14px;
+        padding-right: 14px;
+        color: #fff;
+        font-family: "okta";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        cursor: pointer;
+        .icon-img {
+          margin-right: 7px;
+        }
+      }
+      .btn-wa:hover {
+        opacity: 0.8;
+      }
       .title-card {
         color: #fff;
         font-family: "okta";
@@ -870,7 +946,7 @@ async function save() {
         margin-bottom: 45px;
       }
       input {
-        width: 389px;
+        width: 270px;
         height: 29px;
         border-radius: 8px;
         background: #fff;
@@ -878,7 +954,7 @@ async function save() {
         padding-right: 10px;
       }
       .btn-submit {
-        width: 135px;
+        width: 94px;
         height: 30px;
         border-radius: 6px;
         background: #071949;
@@ -973,10 +1049,21 @@ async function save() {
       
       .card-submit {
         width: 80%;
+        height: 280px;
+        .btn-wa {
+          display: none;
+        }
+        .border-vertical {
+          display: none;
+        }
+        .title-input {
+          display:none;
+        }
         .title-card {
           font-size: 18px;
           text-align: center;
           width: 180px;
+          margin-bottom:30px;
         }
         .form-input {
           flex-direction: column;
@@ -988,6 +1075,38 @@ async function save() {
             margin-top: 10px;
             margin-left:0px;
           }
+        }
+        .border-horizontal {
+          border-bottom:1px solid white;
+          margin-top:20px;
+          margin-bottom: 0px;
+          width:70%;
+        }
+        .btn-wa2 {
+          margin-top:20px;
+          border-radius: 51px;
+          background: #1db410;
+          width: 144px;
+          height: 32px;
+          padding-left: 14px;
+          padding-right: 14px;
+          cursor: pointer;
+          .title-btn {
+
+            color: #fff;
+            font-family: "okta";
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            padding-bottom:2px;
+          }
+          .icon-img {
+            margin-right: 7px;
+            height:14px;
+          }
+        }
+        .btn-wa:hover {
+          opacity: 0.8;
         }
       }
     }

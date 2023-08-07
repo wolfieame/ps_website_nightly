@@ -3,21 +3,7 @@
     <div class="flex items-center justify-center">
       <img src="~/assets/img/logo.png" @click="toHero()" class="cursor-pointer logo-img"/>
     </div>
-    <!-- <div class="btn-action flex items-center flex-row">
-      <div
-        class="btn-wa noselect flex items-center noselect justify-center"
-        @click="toWa()"
-      >
-        <img src="~/assets/img/whatsapp.svg" class="icon-img" />
-        Chat with us
-      </div>
-      <div
-        class="btn-touch flex items-center noselect justify-center"
-        @click="toAbout()"
-      >
-        Get In Touch
-      </div>
-    </div> -->
+    <img src="~/assets/img/call.png" @click="toAbout()" class="cursor-pointer call-img"/>
     <div
       class="btn-nav flex item-center justify-center noselect"
       style="position: fixed;"
@@ -34,7 +20,7 @@
         class="icon-btn noselect cursor-pointer"
         @click="nav = false"
       />
-      <div
+      <!-- <div
         class="btn-wa noselect flex noselect items-center justify-center"
         @click="toWa()"
       >
@@ -47,7 +33,7 @@
       >
         Get In Touch
       </div>
-      <div class="border-nav" />
+      <div class="border-nav" /> -->
       <div class="text-nav noselect" @click="toWhy()">Why Us</div>
       <div class="text-nav noselect" @click="toProduct()">Our Products & Services</div>
       <div class="text-nav noselect" @click="toPortfolio()">Our Portfolios</div>
@@ -75,7 +61,7 @@ function toWa() {
   );
 }
 function toHero () {
-  router.push({ path: '/', hash: '' })
+  window.scrollTo(0,0)
 }
 function toWhy () {
   router.push({ path: '/', hash: '#why' })
@@ -107,6 +93,12 @@ function toMyth () {
     margin-right: auto;
     position: fixed;
     top: 17px;
+  }
+  .call-img {
+    z-index: 2;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
   }
   .card-section {
     z-index: 1;
