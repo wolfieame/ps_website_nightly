@@ -1,5 +1,6 @@
 # Primeskills Website Nightly
-It's the branch of primeskills website edited directly by your's truly, Marketing team... somehow
+It's the branch of primeskills website built by TechWeb teams, 
+and edited directly by your's truly, Marketing team... somehow... we're overqualified okay.
 
 ## Nuxt 3 Minimal Starter
 
